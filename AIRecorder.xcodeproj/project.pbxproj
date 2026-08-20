@@ -1,0 +1,619 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00F291C050D9489CACFC5175 /* MockRecorderFTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455C1615C5A85FBDEBF63A95 /* MockRecorderFTPServer.swift */; };
+		0318938B55D10D4BF9E7CC6E /* FTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CA54204FC95798CB19443 /* FTPClient.swift */; };
+		44515E88BD6C769E2CD68D34 /* BLELiveAudioCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8DAB63EB393EF04BE1942 /* BLELiveAudioCapture.swift */; };
+		62FF95C39CA8E5B9130ED4BD /* BLERecorderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A36574F860A1D03CEDA76B2 /* BLERecorderClient.swift */; };
+		6BD60D1EE6B2F34C65C00BB6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2412971815804C0F5A4DBC3 /* NetworkExtension.framework */; };
+		6DB633F6416D69DB5603B4E9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050B8B32C8EFCD023BAA7AFE /* CoreBluetooth.framework */; };
+		9BCC8BD921CACA6C7E43C146 /* HotspotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA6889AB448E705EA9F37F4 /* HotspotManager.swift */; };
+		AE3F111E9D588BD1CD296D95 /* AIRecorderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E595C2E37BB7BE8AE2DB561 /* AIRecorderApp.swift */; };
+		AEF94AA7DEB3E15ADF922A2E /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E83059B8EB9CE21031B2E6 /* DeviceView.swift */; };
+		B179B8B0C91E2254F61EFC7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B66D5A7CE01D98F557001E7 /* ContentView.swift */; };
+		B32E441BA8C82821C23588F7 /* LocalRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47390A6D411B8D5369A1B9 /* LocalRecording.swift */; };
+		B4A5A19EC0EB7C07FF785CD7 /* RecordingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17B9390EDAE3CD8D2C0E60 /* RecordingStore.swift */; };
+		BD823507CE40293102B014DA /* RecorderTransferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B3B0D20D09B40BC2D808F1 /* RecorderTransferTests.swift */; };
+		C1AFDB19FFF911B3E34BCD15 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295FB61FD9A8726CBA9010F8 /* Network.framework */; };
+		CCA59F64E547F351A639D460 /* RecordingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5ED00C4A227CBA355D9F14 /* RecordingDetailView.swift */; };
+		D3F79674053F4A390F5018D4 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F826C6C2FF03687369F45827 /* AppModel.swift */; };
+		D68ADDE6E03EB8C4251B885F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238909289F7AA4F8B8354326 /* Assets.xcassets */; };
+		DA3FD582294424B44D0D2485 /* RecorderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC38AE4FEE184BD0A7284B /* RecorderProtocol.swift */; };
+		DEE8441808858D1CA88F847E /* BLEDiscoveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF8F2E3A17396D8BE065D7C /* BLEDiscoveryUITests.swift */; };
+		F64B7BC3CE77F770D258A4CA /* RecorderProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4750BE23F65D38984403B6E /* RecorderProtocolTests.swift */; };
+		F6C978403B3786CA9718D217 /* RecorderAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E63E2D0EFBF7C7DCD8E12 /* RecorderAppError.swift */; };
+		FAAA5026E015251BE54325F4 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275EB3780D43534378AB84 /* LibraryView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A498CCEB1785F4D3A6103D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ABACEACAC34A1A358469793 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FC1662334A1E6DEEAE58A85;
+			remoteInfo = AIRecorder;
+		};
+		42F2AC64DC2954A37058137A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ABACEACAC34A1A358469793 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FC1662334A1E6DEEAE58A85;
+			remoteInfo = AIRecorder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01001448B2FE099F92562E1D /* RecorderCoreTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = RecorderCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		050B8B32C8EFCD023BAA7AFE /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		11A4DB8E44648157E39D7F32 /* AIRecorder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AIRecorder.entitlements; sourceTree = "<group>"; };
+		1B66D5A7CE01D98F557001E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		238909289F7AA4F8B8354326 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25F6CC0D49F109D0FB8ABF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		290E63E2D0EFBF7C7DCD8E12 /* RecorderAppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderAppError.swift; sourceTree = "<group>"; };
+		295FB61FD9A8726CBA9010F8 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
+		2C0572EBE5F21FA165027FDA /* AIRecorderUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = AIRecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		455C1615C5A85FBDEBF63A95 /* MockRecorderFTPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRecorderFTPServer.swift; sourceTree = "<group>"; };
+		4E595C2E37BB7BE8AE2DB561 /* AIRecorderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRecorderApp.swift; sourceTree = "<group>"; };
+		5B47390A6D411B8D5369A1B9 /* LocalRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRecording.swift; sourceTree = "<group>"; };
+		5D275EB3780D43534378AB84 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		7A36574F860A1D03CEDA76B2 /* BLERecorderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLERecorderClient.swift; sourceTree = "<group>"; };
+		8BA6889AB448E705EA9F37F4 /* HotspotManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotManager.swift; sourceTree = "<group>"; };
+		A4AC38AE4FEE184BD0A7284B /* RecorderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderProtocol.swift; sourceTree = "<group>"; };
+		A4E83059B8EB9CE21031B2E6 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		AB5ED00C4A227CBA355D9F14 /* RecordingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingDetailView.swift; sourceTree = "<group>"; };
+		B17DEF72ABE23ECB8D02A3FD /* AIRecorder.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AIRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2412971815804C0F5A4DBC3 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		D7B8DAB63EB393EF04BE1942 /* BLELiveAudioCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLELiveAudioCapture.swift; sourceTree = "<group>"; };
+		DE17B9390EDAE3CD8D2C0E60 /* RecordingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingStore.swift; sourceTree = "<group>"; };
+		E4750BE23F65D38984403B6E /* RecorderProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderProtocolTests.swift; sourceTree = "<group>"; };
+		E90CA54204FC95798CB19443 /* FTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTPClient.swift; sourceTree = "<group>"; };
+		F6B3B0D20D09B40BC2D808F1 /* RecorderTransferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderTransferTests.swift; sourceTree = "<group>"; };
+		F826C6C2FF03687369F45827 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		FBF8F2E3A17396D8BE065D7C /* BLEDiscoveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEDiscoveryUITests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A8E161E037E9CD78B468E1BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DB633F6416D69DB5603B4E9 /* CoreBluetooth.framework in Frameworks */,
+				C1AFDB19FFF911B3E34BCD15 /* Network.framework in Frameworks */,
+				6BD60D1EE6B2F34C65C00BB6 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A408F5D59BA3C59D67F6E7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				050B8B32C8EFCD023BAA7AFE /* CoreBluetooth.framework */,
+				295FB61FD9A8726CBA9010F8 /* Network.framework */,
+				B2412971815804C0F5A4DBC3 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D4635687CFD45FAD78EA983 /* RecorderCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				455C1615C5A85FBDEBF63A95 /* MockRecorderFTPServer.swift */,
+				E4750BE23F65D38984403B6E /* RecorderProtocolTests.swift */,
+				F6B3B0D20D09B40BC2D808F1 /* RecorderTransferTests.swift */,
+			);
+			name = RecorderCoreTests;
+			path = Tests/RecorderCoreTests;
+			sourceTree = "<group>";
+		};
+		2F9423BE9113C743AD8AB53B = {
+			isa = PBXGroup;
+			children = (
+				4A86778B1FD490BA945D0B06 /* AIRecorder */,
+				D31494E60D8A181C352B88A4 /* AIRecorderUITests */,
+				BC155EE199EE49DA9E056980 /* RecorderCore */,
+				2D4635687CFD45FAD78EA983 /* RecorderCoreTests */,
+				0A408F5D59BA3C59D67F6E7A /* Frameworks */,
+				8171B09165585DA23E56391D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A86778B1FD490BA945D0B06 /* AIRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				11A4DB8E44648157E39D7F32 /* AIRecorder.entitlements */,
+				4E595C2E37BB7BE8AE2DB561 /* AIRecorderApp.swift */,
+				F826C6C2FF03687369F45827 /* AppModel.swift */,
+				238909289F7AA4F8B8354326 /* Assets.xcassets */,
+				D7B8DAB63EB393EF04BE1942 /* BLELiveAudioCapture.swift */,
+				7A36574F860A1D03CEDA76B2 /* BLERecorderClient.swift */,
+				E90CA54204FC95798CB19443 /* FTPClient.swift */,
+				8BA6889AB448E705EA9F37F4 /* HotspotManager.swift */,
+				25F6CC0D49F109D0FB8ABF7A /* Info.plist */,
+				290E63E2D0EFBF7C7DCD8E12 /* RecorderAppError.swift */,
+				DE17B9390EDAE3CD8D2C0E60 /* RecordingStore.swift */,
+				B055658B533964205EECC53D /* Views */,
+			);
+			path = AIRecorder;
+			sourceTree = "<group>";
+		};
+		8171B09165585DA23E56391D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B17DEF72ABE23ECB8D02A3FD /* AIRecorder.app */,
+				2C0572EBE5F21FA165027FDA /* AIRecorderUITests.xctest */,
+				01001448B2FE099F92562E1D /* RecorderCoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B055658B533964205EECC53D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B66D5A7CE01D98F557001E7 /* ContentView.swift */,
+				A4E83059B8EB9CE21031B2E6 /* DeviceView.swift */,
+				5D275EB3780D43534378AB84 /* LibraryView.swift */,
+				AB5ED00C4A227CBA355D9F14 /* RecordingDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BC155EE199EE49DA9E056980 /* RecorderCore */ = {
+			isa = PBXGroup;
+			children = (
+				5B47390A6D411B8D5369A1B9 /* LocalRecording.swift */,
+				A4AC38AE4FEE184BD0A7284B /* RecorderProtocol.swift */,
+			);
+			name = RecorderCore;
+			path = Sources/RecorderCore;
+			sourceTree = "<group>";
+		};
+		D31494E60D8A181C352B88A4 /* AIRecorderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FBF8F2E3A17396D8BE065D7C /* BLEDiscoveryUITests.swift */,
+			);
+			name = AIRecorderUITests;
+			path = Tests/AIRecorderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1439B4A6BD71DD0823E50B05 /* RecorderCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8382021217992FC103EF507 /* Build configuration list for PBXNativeTarget "RecorderCoreTests" */;
+			buildPhases = (
+				1295F1648BBB7C80C8E6979A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15C6EE2F9BA4E499258C2B87 /* PBXTargetDependency */,
+			);
+			name = RecorderCoreTests;
+			packageProductDependencies = (
+			);
+			productName = RecorderCoreTests;
+			productReference = 01001448B2FE099F92562E1D /* RecorderCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3FC1662334A1E6DEEAE58A85 /* AIRecorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CECE7632899B1F7A4C600C0 /* Build configuration list for PBXNativeTarget "AIRecorder" */;
+			buildPhases = (
+				467CDE8A92A9F6F58DDEEBE0 /* Sources */,
+				7C70180AAF97518ED3F7C07B /* Resources */,
+				A8E161E037E9CD78B468E1BA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AIRecorder;
+			packageProductDependencies = (
+			);
+			productName = AIRecorder;
+			productReference = B17DEF72ABE23ECB8D02A3FD /* AIRecorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB2EB0DCAA6C1CA736C252F8 /* AIRecorderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6E37FC1EF4C6213A8BD2D1F /* Build configuration list for PBXNativeTarget "AIRecorderUITests" */;
+			buildPhases = (
+				D3F1FE8B7621B93EB274ADCA /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02A4C27682E5665EAD80F99D /* PBXTargetDependency */,
+			);
+			name = AIRecorderUITests;
+			packageProductDependencies = (
+			);
+			productName = AIRecorderUITests;
+			productReference = 2C0572EBE5F21FA165027FDA /* AIRecorderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7ABACEACAC34A1A358469793 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					1439B4A6BD71DD0823E50B05 = {
+						ProvisioningStyle = Automatic;
+					};
+					3FC1662334A1E6DEEAE58A85 = {
+						ProvisioningStyle = Automatic;
+					};
+					DB2EB0DCAA6C1CA736C252F8 = {
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3FC1662334A1E6DEEAE58A85;
+					};
+				};
+			};
+			buildConfigurationList = 3CAA54B87D15B4D634C20113 /* Build configuration list for PBXProject "AIRecorder" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2F9423BE9113C743AD8AB53B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8171B09165585DA23E56391D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FC1662334A1E6DEEAE58A85 /* AIRecorder */,
+				1439B4A6BD71DD0823E50B05 /* RecorderCoreTests */,
+				DB2EB0DCAA6C1CA736C252F8 /* AIRecorderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7C70180AAF97518ED3F7C07B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D68ADDE6E03EB8C4251B885F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1295F1648BBB7C80C8E6979A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00F291C050D9489CACFC5175 /* MockRecorderFTPServer.swift in Sources */,
+				F64B7BC3CE77F770D258A4CA /* RecorderProtocolTests.swift in Sources */,
+				BD823507CE40293102B014DA /* RecorderTransferTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		467CDE8A92A9F6F58DDEEBE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE3F111E9D588BD1CD296D95 /* AIRecorderApp.swift in Sources */,
+				D3F79674053F4A390F5018D4 /* AppModel.swift in Sources */,
+				44515E88BD6C769E2CD68D34 /* BLELiveAudioCapture.swift in Sources */,
+				62FF95C39CA8E5B9130ED4BD /* BLERecorderClient.swift in Sources */,
+				B179B8B0C91E2254F61EFC7F /* ContentView.swift in Sources */,
+				AEF94AA7DEB3E15ADF922A2E /* DeviceView.swift in Sources */,
+				0318938B55D10D4BF9E7CC6E /* FTPClient.swift in Sources */,
+				9BCC8BD921CACA6C7E43C146 /* HotspotManager.swift in Sources */,
+				FAAA5026E015251BE54325F4 /* LibraryView.swift in Sources */,
+				B32E441BA8C82821C23588F7 /* LocalRecording.swift in Sources */,
+				F6C978403B3786CA9718D217 /* RecorderAppError.swift in Sources */,
+				DA3FD582294424B44D0D2485 /* RecorderProtocol.swift in Sources */,
+				CCA59F64E547F351A639D460 /* RecordingDetailView.swift in Sources */,
+				B4A5A19EC0EB7C07FF785CD7 /* RecordingStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3F1FE8B7621B93EB274ADCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEE8441808858D1CA88F847E /* BLEDiscoveryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02A4C27682E5665EAD80F99D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FC1662334A1E6DEEAE58A85 /* AIRecorder */;
+			targetProxy = 3A498CCEB1785F4D3A6103D8 /* PBXContainerItemProxy */;
+		};
+		15C6EE2F9BA4E499258C2B87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FC1662334A1E6DEEAE58A85 /* AIRecorder */;
+			targetProxy = 42F2AC64DC2954A37058137A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		16330E3826BB375EBE3879FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samuelzmx.dawnrecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		353E612A0A6AF2649224BB42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samuelzmx.dawnrecorder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		49AE3C0DA5F436B55D6AC130 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AIRecorder/AIRecorder.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = AIRecorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		535D0DE503B60707D673229C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIRecorder.app/AIRecorder";
+			};
+			name = Release;
+		};
+		62FCD7AA75873D81F49CDB1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AIRecorder;
+			};
+			name = Debug;
+		};
+		89208DAA6D807D70B48DD6E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIRecorder.app/AIRecorder";
+			};
+			name = Debug;
+		};
+		CAA17B6FAEF9A723C972D89D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AIRecorder;
+			};
+			name = Release;
+		};
+		FF995E024FB53A96F2BAD2EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AIRecorder/AIRecorder.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = AIRecorder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3CAA54B87D15B4D634C20113 /* Build configuration list for PBXProject "AIRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				353E612A0A6AF2649224BB42 /* Debug */,
+				16330E3826BB375EBE3879FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9CECE7632899B1F7A4C600C0 /* Build configuration list for PBXNativeTarget "AIRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49AE3C0DA5F436B55D6AC130 /* Debug */,
+				FF995E024FB53A96F2BAD2EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A6E37FC1EF4C6213A8BD2D1F /* Build configuration list for PBXNativeTarget "AIRecorderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62FCD7AA75873D81F49CDB1B /* Debug */,
+				CAA17B6FAEF9A723C972D89D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A8382021217992FC103EF507 /* Build configuration list for PBXNativeTarget "RecorderCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89208DAA6D807D70B48DD6E5 /* Debug */,
+				535D0DE503B60707D673229C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7ABACEACAC34A1A358469793 /* Project object */;
+}

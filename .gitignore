@@ -1,0 +1,50 @@
+# Environment and private configuration
+.env
+.env.*
+!.env.example
+*.xcconfig
+!Config/Example.xcconfig
+Config/Private/
+Secrets/
+**/Secrets*.swift
+
+# Private cloud and provider modules
+AIRecorder/BackendClient.swift
+AIRecorder/DeepgramClient.swift
+AIRecorder/SecretStore.swift
+AIRecorder/PrivateCloud/
+Backend/
+Cloud/
+server/
+
+# Apple credentials and release delivery
+*.cer
+*.p12
+*.p8
+*.pem
+*.key
+*.csr
+*.mobileprovision
+*.provisionprofile
+*.xcarchive
+*.ipa
+ExportOptions.plist
+archive_testflight.command
+upload_testflight.command
+testflight_preflight.command
+TESTFLIGHT_*.md
+BUILD_*_RELEASE_EVIDENCE.md
+BOSS_TEST_BUILD_*.md
+CHECKPOINT_STATUS.md
+
+# Generated files and local IDE state
+.DS_Store
+.build/
+.swiftpm/
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.cstemp
+*.log
+
