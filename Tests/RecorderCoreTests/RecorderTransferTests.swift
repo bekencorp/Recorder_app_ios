@@ -16,10 +16,10 @@ final class RecorderTransferTests: XCTestCase {
         defer { server.stop() }
         let client = RecorderFTPClient(port: port, requiresWiFiInterface: false)
         let credentials = AIRecorder.RecorderWiFiCredentials(
-            ssid: "recoder",
-            password: "12345678",
-            ftpUser: "recorder",
-            ftpPassword: "12345678",
+            ssid: "fixture-ap",
+            password: "fixture-wifi",
+            ftpUser: "fixture-user",
+            ftpPassword: "fixture-ftp",
             host: "127.0.0.1"
         )
 
@@ -274,25 +274,35 @@ final class RecorderTransferTests: XCTestCase {
 
     func testRecorderHotspotReleaseRequiresLeavingRecorderSSID() {
         XCTAssertEqual(
-            HotspotManager.releaseState(currentSSID: "recoder", recorderSSID: "recoder"),
+            HotspotManager.releaseState(currentSSID: "fixture-ap", recorderSSID: "fixture-ap"),
             .stillAssociated
         )
         XCTAssertEqual(
-            HotspotManager.releaseState(currentSSID: "Home Wi-Fi", recorderSSID: "recoder"),
+            HotspotManager.releaseState(currentSSID: "Home Wi-Fi", recorderSSID: "fixture-ap"),
             .released
         )
         XCTAssertEqual(
-            HotspotManager.releaseState(currentSSID: nil, recorderSSID: "recoder"),
+            HotspotManager.releaseState(currentSSID: nil, recorderSSID: "fixture-ap"),
             .released
         )
     }
 
+    func testTransferErrorsDoNotEmbedCredentials() {
+        let missing = RecorderAppError.transferCredentialsMissing.errorDescription ?? ""
+        let unavailable = RecorderAppError.transferNetworkUnavailable.errorDescription ?? ""
+        for message in [missing, unavailable] {
+            XCTAssertFalse(message.contains("12345678"))
+            XCTAssertFalse(message.contains("recoder"))
+        }
+        XCTAssertEqual(RecorderAppError.transferCredentialsMissing.supportCode, "BLE-003")
+    }
+
     private var testCredentials: RecorderWiFiCredentials {
         RecorderWiFiCredentials(
-            ssid: "recoder",
-            password: "12345678",
-            ftpUser: "recorder",
-            ftpPassword: "12345678",
+            ssid: "fixture-ap",
+            password: "fixture-wifi",
+            ftpUser: "fixture-user",
+            ftpPassword: "fixture-ftp",
             host: "127.0.0.1"
         )
     }

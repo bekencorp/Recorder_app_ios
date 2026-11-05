@@ -29,16 +29,54 @@ final class RecorderProtocolTests: XCTestCase {
         XCTAssertEqual(status.batteryMillivolts, 4_000)
         XCTAssertEqual(status.recordingSeconds, 300)
 
+        let credentials = try RecorderWiFiCredentials(data: wifiCredentialPayload(
+            ssid: "fixture-ap",
+            password: "fixture-wifi",
+            ftpUser: "fixture-user",
+            ftpPassword: "fixture-ftp",
+            host: [192, 168, 4, 1]
+        ))
+        XCTAssertEqual(credentials.ssid, "fixture-ap")
+        XCTAssertEqual(credentials.password, "fixture-wifi")
+        XCTAssertEqual(credentials.ftpUser, "fixture-user")
+        XCTAssertEqual(credentials.ftpPassword, "fixture-ftp")
+        XCTAssertEqual(credentials.host, "192.168.4.1")
+    }
+
+    func testRejectsMissingWiFiCredentials() {
+        XCTAssertThrowsError(try RecorderWiFiCredentials(data: Data())) { error in
+            XCTAssertEqual(error as? RecorderProtocolError, .malformedWiFiCredentials)
+        }
+        XCTAssertThrowsError(try RecorderWiFiCredentials(data: Data([0]))) { error in
+            XCTAssertEqual(error as? RecorderProtocolError, .malformedWiFiCredentials)
+        }
+        let truncated = wifiCredentialPayload(
+            ssid: "fixture-ap",
+            password: "fixture-wifi",
+            ftpUser: "fixture-user",
+            ftpPassword: "fixture-ftp",
+            host: [192, 168]
+        )
+        XCTAssertThrowsError(try RecorderWiFiCredentials(data: truncated)) { error in
+            XCTAssertEqual(error as? RecorderProtocolError, .malformedWiFiCredentials)
+        }
+    }
+
+    private func wifiCredentialPayload(
+        ssid: String,
+        password: String,
+        ftpUser: String,
+        ftpPassword: String,
+        host: [UInt8]
+    ) -> Data {
         var transfer = Data()
-        for string in ["recoder", "12345678", "recorder", "12345678"] {
+        for string in [ssid, password, ftpUser, ftpPassword] {
             let value = Data(string.utf8)
             transfer.append(UInt8(value.count))
             transfer.append(value)
         }
-        transfer.append(contentsOf: [192, 168, 4, 1])
-        let credentials = try RecorderWiFiCredentials(data: transfer)
-        XCTAssertEqual(credentials.host, "192.168.4.1")
-        XCTAssertEqual(credentials, .phaseOneDefaults)
+        transfer.append(contentsOf: host)
+        return transfer
     }
 
     func testParsesCommandResponseNotification() throws {
