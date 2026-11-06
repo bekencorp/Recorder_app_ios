@@ -28,7 +28,7 @@ public enum RecorderProtocolError: Error, Equatable, LocalizedError {
         case .malformedStatus:
             "The recorder status payload has an unexpected format."
         case .malformedWiFiCredentials:
-            "The recorder did not provide valid Wi-Fi transfer details."
+            "The recorder's Bluetooth response did not include valid Wi-Fi or FTP credentials."
         case .malformedRawOpus(let offset):
             "The recording has an invalid Opus frame near byte \(offset)."
         case .malformedBLEOpusFrame:
@@ -171,14 +171,6 @@ public struct RecorderWiFiCredentials: Equatable, Sendable {
         self.ftpPassword = ftpPassword
         self.host = host
     }
-
-    public static let phaseOneDefaults = RecorderWiFiCredentials(
-        ssid: "recoder",
-        password: "12345678",
-        ftpUser: "recorder",
-        ftpPassword: "12345678",
-        host: "192.168.4.1"
-    )
 
     public init(data: Data) throws {
         var cursor = 0

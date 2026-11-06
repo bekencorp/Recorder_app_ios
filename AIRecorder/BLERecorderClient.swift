@@ -293,19 +293,13 @@ final class BLERecorderClient: NSObject, ObservableObject {
         guard !isLiveAudioStreaming else {
             throw RecorderAppError.bleAudioStreamUnavailable
         }
-        transferHandoffExpected = true
         do {
             let response = try await send(.startWiFiAP, timeout: 15)
-            return try RecorderWiFiCredentials(data: response.data)
-        } catch RecorderAppError.notConnected {
-            // Phase-one firmware switches radios before iOS receives the response.
-            return .phaseOneDefaults
-        } catch RecorderAppError.commandTimedOut {
-            // Protocol v1.3.2 fixes these credentials for phase-one firmware.
-            return .phaseOneDefaults
-        } catch {
-            transferHandoffExpected = false
-            throw error
+            let credentials = try RecorderWiFiCredentials(data: response.data)
+            transferHandoffExpected = true
+            return credentials
+        } catch RecorderAppError.notConnected, RecorderAppError.commandTimedOut {
+            throw RecorderAppError.transferCredentialsMissing
         }
     }
 
@@ -532,7 +526,6 @@ extension BLERecorderClient: CBCentralManagerDelegate {
     ) {
         Task { @MainActor in
             let expectedTransferDisconnect = transferHandoffExpected
-                || pending.values.contains { $0.command == .startWiFiAP }
             transferHandoffExpected = false
             connectionGeneration = UUID()
             connectedPeripheral = nil

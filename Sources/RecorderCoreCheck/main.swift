@@ -32,15 +32,25 @@ try require(status.batteryMillivolts == 4_000, "battery decoding")
 try require(status.recordingSeconds == 300, "recording duration decoding")
 
 var transfer = Data()
-for string in ["recoder", "12345678", "recorder", "12345678"] {
+for string in ["fixture-ap", "fixture-wifi", "fixture-user", "fixture-ftp"] {
     let value = Data(string.utf8)
     transfer.append(UInt8(value.count))
     transfer.append(value)
 }
 transfer.append(contentsOf: [192, 168, 4, 1])
 let credentials = try RecorderWiFiCredentials(data: transfer)
+try require(credentials.ssid == "fixture-ap", "Wi-Fi SSID decoding")
+try require(credentials.password == "fixture-wifi", "Wi-Fi password decoding")
 try require(credentials.host == "192.168.4.1", "Wi-Fi host decoding")
-try require(credentials.ftpUser == "recorder", "FTP user decoding")
+try require(credentials.ftpUser == "fixture-user", "FTP user decoding")
+try require(credentials.ftpPassword == "fixture-ftp", "FTP password decoding")
+
+do {
+    _ = try RecorderWiFiCredentials(data: Data())
+    throw CheckFailure.mismatch("empty transfer credentials were accepted")
+} catch RecorderProtocolError.malformedWiFiCredentials {
+    // Expected.
+}
 
 let validRawOpus = Data([20] + Array(repeating: 1, count: 20)
     + [40] + Array(repeating: 2, count: 40))

@@ -3,6 +3,7 @@ import Foundation
 enum RecorderAppError: Error, LocalizedError {
     case notConnected
     case commandTimedOut
+    case transferCredentialsMissing
     case transferNetworkUnavailable
     case malformedFTPReply(String)
     case ftpTimedOut
@@ -15,6 +16,7 @@ enum RecorderAppError: Error, LocalizedError {
         switch self {
         case .notConnected: "BLE-001"
         case .commandTimedOut: "BLE-002"
+        case .transferCredentialsMissing: "BLE-003"
         case .transferNetworkUnavailable: "WIFI-001"
         case .malformedFTPReply: "FTP-001"
         case .ftpTimedOut: "FTP-002"
@@ -31,8 +33,10 @@ enum RecorderAppError: Error, LocalizedError {
             "Connect to the recorder first."
         case .commandTimedOut:
             "The recorder did not answer. Move the iPhone closer and try again."
+        case .transferCredentialsMissing:
+            "The recorder did not send Wi-Fi or FTP credentials over Bluetooth, so the transfer was stopped."
         case .transferNetworkUnavailable:
-            "The iPhone could not join the recorder's transfer Wi-Fi. Open Settings > Wi-Fi, join recoder with password 12345678, then return and try again."
+            "The iPhone could not join the recorder's transfer Wi-Fi. In Settings, join the network received over Bluetooth, then return and try again."
         case .malformedFTPReply(let reply):
             "The recorder's file server returned an unexpected response: \(reply)"
         case .ftpTimedOut:
